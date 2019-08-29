@@ -1,10 +1,16 @@
 import React from 'react'
 
-const Home = () => (
-    <div>
-        <h1>Home</h1>
+import { FirebaseContext } from '../Firebase'
 
-    </div>
+const Home = () => (
+    <FirebaseContext.Consumer>
+        {firebase => {
+            console.log(firebase)
+            return <div> This is Firebase and stuff</div>
+        }}
+    </FirebaseContext.Consumer>
 )
 
+
 export default Home
+
